@@ -37,11 +37,11 @@ defmodule Perseus.Article do
 
   @callback create_article(article_params) ::
     {:ok, %{slug: slug}}
-    | {:error, errors}
+    | errors
 
   @callback update_article(slug, article_params) ::
-    {:ok, saved_article}
-    | {:error, errors}
+    {:ok, %{slug: slug}}
+    | errors
     | :not_found
 
   @callback get_article(slug) :: saved_article | nil
