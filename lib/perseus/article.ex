@@ -1,5 +1,4 @@
 defmodule Perseus.Article do
-  @moduledoc false
 
   defmodule Article do
     @enforce_keys [:id, :title, :content,
