@@ -2,7 +2,7 @@ defmodule Perseus.Article do
 
   defmodule Article do
     @enforce_keys [:id, :title, :content,
-      :date_published, :slug]
+      :date_published, :slug, :summary]
     defstruct @enforce_keys
   end
 
@@ -12,6 +12,7 @@ defmodule Perseus.Article do
   @type saved_article :: %Article{
     id: pos_integer(),
     title: String.t,
+    summary: String.t,
     content: String.t,
     date_published: String.t | nil,
     slug: String.t
@@ -21,6 +22,7 @@ defmodule Perseus.Article do
   Map of fields for an article
   """
   @type article_params :: %{required(:title) => String.t,
+                            required(:summary) => String.t,
                             required(:content) => String.t,
                             optional(:slug) => slug}
 
